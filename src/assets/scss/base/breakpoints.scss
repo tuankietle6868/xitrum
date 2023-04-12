@@ -1,0 +1,32 @@
+//Breakpoints
+$mobile-width: 668px;
+$tablet-width: 768px;
+$tablet-pro-width: 1024px;
+$desktop-width: 1366px;
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+          @content;
+      }
+  } @else if $point == tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-pro-width - 1px}) {
+          @content;
+      }
+  } @else if $point == desktop {
+    @media (min-width: #{$tablet-pro-width}) and (max-width: #{$desktop-width}) {
+          @content;
+      }
+  } @else if $point == ltdesktop {
+      @media (min-width: 1400px) {
+          @content;
+      }
+  } @else if $point == tabletLargePortrait {
+      @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+          @content;
+      }
+  } @else if $point == tabletLargeLandscape {
+      @media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+          @content;
+      }
+  }
+}

@@ -1,0 +1,19 @@
+# .vscode
+
+node_modules
+.DS_Store
+dist
+build
+dist-ssr
+*.local
+
+package-lock.json
+yarn.lock
+
+# yarn
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions

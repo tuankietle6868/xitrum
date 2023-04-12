@@ -1,0 +1,52 @@
+<svg width="444" height="444" viewBox="0 0 444 444" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>.Ellipse_2_171 {
+	animation: 5s linear 0s infinite normal forwards running Ellipse_2_171;
+}
+@keyframes Ellipse_2_171 {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}.Ellipse_3_727 {
+	animation: 5s linear 0s infinite normal forwards running Ellipse_3_727;
+}
+@keyframes Ellipse_3_727 {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+</style><g >
+<g filter="url(#filter0_f)" class="Ellipse_2_171" transform="translate(222 222)" rx="222" ry="222">
+<circle fill="white" fill-opacity="0.28" class="Ellipse_2_171" transform="translate(222 222)" rx="222" ry="222"/>
+</g>
+
+<g filter="url(#filter0_f)" class="Ellipse_3_727" transform="translate(229 228)" rx="168" ry="168">
+<circle fill="white" fill-opacity="0.84" class="Ellipse_3_727" transform="translate(229 228)" rx="168" ry="168"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f" x="0" y="0" width="562" height="562" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="29.5" result="effect1_foregroundBlur"/>
+</filter>
+
+<filter id="filter0_f" x="0" y="0" width="454" height="454" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="29.5" result="effect1_foregroundBlur"/>
+</filter>
+
+</defs>
+</svg>

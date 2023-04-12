@@ -1,0 +1,1978 @@
+@import 'base/breakpoints';
+@import 'base/variables';
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin abs-pos {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+section {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  // position: sticky;
+  // top: 0;
+  & .container-fluid,
+  & .container,
+  & .row {
+    height: 100%;
+  }
+}
+.modal-backdrop.show {
+  opacity: 0.9;
+}
+.noti-rotate-device {
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  align-items: center;
+  & img {
+    width: 50px;
+    height: 50px;
+    fill: white;
+  }
+}
+.bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.content {
+  position: relative;
+  z-index: 9;
+  padding: 0 36px;
+}
+// story 1
+// story 1
+$color1: rgba(34, 34, 34, 0.9);
+$color2: rgba(59, 59, 59, 0.3);
+.thunder {
+  @at-root {
+    @keyframes thunder-bg {
+      0% {
+        background-color: $color1;
+      }
+      9% {
+        background-color: $color1;
+      }
+      10% {
+        background-color: $color2;
+      }
+      10.5% {
+        background-color: $color1;
+      }
+      80% {
+        background-color: $color1;
+      }
+      82% {
+        background-color: $color2;
+      }
+      83% {
+        background-color: $color1;
+      }
+      83.5% {
+        background-color: $color2;
+      }
+      100% {
+        background-color: $color1;
+      }
+    }
+  }
+}
+@keyframes clouds {
+  0% {
+    margin-left: -50%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 100%;
+  }
+  100% {
+    margin-left: 110%;
+  }
+}
+@keyframes witches-fill {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+.story-1 {
+  background: linear-gradient(180deg, #1a1a1a 0%, #1e77a6 100%);
+  height: 100%;
+  & .lightning-storm {
+    &:after {
+      content: '';
+      @include size(100%);
+      @include abs-pos;
+      background-color: rgba(#1e77a6, 0.9);
+      z-index: 1;
+      animation: thunder-bg 6s infinite;
+    }
+    background: linear-gradient(
+      180.54deg,
+      #1a1a1a -26.88%,
+      #1a2023 -11.78%,
+      #1b2f3a 12.54%,
+      #1c4961 43.03%,
+      #1e6c96 78.2%,
+      #1e77a6 87.95%
+    );
+  }
+  & .title {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+    color: #98ecff;
+    margin-top: 30%;
+    margin-bottom: 0;
+    @include breakpoint(mobile) {
+      margin-top: 20%;
+      font-size: 36px;
+      line-height: 40px;
+    }
+    @include breakpoint(tablet) {
+      margin-top: 15%;
+      font-size: 44px;
+      line-height: 56px;
+    }
+  }
+  & .subTitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  & .cloud {
+    position: absolute;
+    width: 95%;
+    height: 302px;
+    right: 0%;
+    top: -15%;
+    background-image: url(../img/story-1/cloud.png);
+    mix-blend-mode: screen;
+    z-index: 0;
+  }
+  & .home {
+    position: absolute;
+    width: 100%;
+    height: 623px;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/story-1/mushroomhouse.webp);
+    background-position: right;
+    z-index: 4;
+    @include breakpoint(mobile) {
+      height: 250px;
+      width: 516px;
+    }
+    @include breakpoint(tablet) {
+      height: 350px;
+      width: 616px;
+    }
+    @include breakpoint(desktop) {
+      height: 523px;
+    }
+  }
+  & .tree {
+    position: absolute;
+    background-image: url(../img/story-1/tree.png);
+    bottom: 0;
+    left: -10%;
+    width: 100%;
+    height: 230px;
+    z-index: 3;
+    background-position: left;
+    @include breakpoint(mobile) {
+      height: 100px;
+    }
+    @include breakpoint(tablet) {
+      height: 130px;
+    }
+    @include breakpoint(desktop) {
+      height: 175px;
+    }
+  }
+  & .forest {
+    position: absolute;
+    background-image: url(../img/story-1/forest.png);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 470px;
+    z-index: 2;
+    background-position: left;
+    @include breakpoint(mobile) {
+      height: 270px;
+    }
+    @include breakpoint(tablet) {
+      height: 300px;
+    }
+  }
+  & .witches {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    width: 100px;
+    height: 200px;
+    z-index: 2;
+    background-image: url(../img/story-1/witch.png);
+    @include breakpoint(mobile) {
+      bottom: 10%;
+      width: 50px;
+      height: 100px;
+    }
+    @include breakpoint(tablet) {
+      width: 75px;
+      height: 145px;
+    }
+    @include breakpoint(desktop) {
+      bottom: 7%;
+    }
+    &_eyes {
+      width: 32px;
+      top: 35%;
+      left: 40%;
+      position: absolute;
+      @include breakpoint(mobile) {
+        width: 17px;
+      }
+      @include breakpoint(tablet) {
+        width: 25px;
+      }
+    }
+  }
+}
+// story 2
+.story-2 {
+  canvas {
+    @include size(100%);
+    @include abs-pos;
+  }
+  #canvas3 {
+    z-index: 5;
+  }
+
+  #canvas2 {
+    z-index: 10;
+  }
+
+  #canvas1 {
+    z-index: 100;
+  }
+  & .thunder:after {
+    content: '';
+    @include size(100%);
+    @include abs-pos;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    animation: thunder-bg 6s infinite;
+  }
+  background: linear-gradient(
+    180.54deg,
+    #1a1a1a -26.88%,
+    #1a2023 -11.78%,
+    #1b2f3a 12.54%,
+    #1c4961 43.03%,
+    #1e6c96 78.2%,
+    #1e77a6 87.95%
+  );
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 60px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+  & .subTitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  & .cloud {
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    right: 0%;
+    top: -15%;
+    background-image: url(../img/story-2/cloud.png);
+    // background-size: cover;
+    background-position: right;
+    mix-blend-mode: screen;
+    z-index: 0;
+  }
+  & .land {
+    position: absolute;
+    width: 100%;
+    height: 273px;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/story-2/land.png);
+    background-position: right;
+    z-index: 4;
+    @include breakpoint(mobile) {
+      height: 130px;
+    }
+    @include breakpoint(tablet) {
+      height: 150px;
+    }
+    @include breakpoint(desktop) {
+      bottom: -3%;
+    }
+  }
+  & .x-trum-1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 470px;
+    height: 470px;
+    z-index: 5;
+    background-image: url(../img/story-2/x-trum1.png);
+    background-position: bottom;
+    @include breakpoint(mobile) {
+      width: 200px;
+      height: 200px;
+    }
+    @include breakpoint(tablet) {
+      width: 300px;
+      height: 300px;
+    }
+    @include breakpoint(desktop) {
+      width: 370px;
+      height: 370px;
+    }
+  }
+  & .x-trum-2 {
+    position: absolute;
+    bottom: 5%;
+    right: 47%;
+    width: 170px;
+    height: 170px;
+    z-index: 4;
+    background-image: url(../img/story-2/x-trum2.png);
+    background-position: bottom;
+    @include breakpoint(mobile) {
+      width: 85px;
+      height: 85px;
+    }
+    @include breakpoint(tablet) {
+      width: 105px;
+      height: 105px;
+    }
+    @include breakpoint(desktop) {
+      width: 145px;
+      height: 145px;
+    }
+  }
+  & .x-trum-3 {
+    position: absolute;
+    bottom: 27%;
+    right: 40%;
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    background-image: url(../img/story-2/x-trum2.png);
+    background-position: bottom;
+    @include breakpoint(mobile) {
+      width: 50px;
+      height: 50px;
+    }
+    @include breakpoint(tablet) {
+      width: 75px;
+      height: 75px;
+    }
+    @include breakpoint(desktop) {
+      bottom: 18%;
+    }
+  }
+  & .witches {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 750px;
+    height: 750px;
+    z-index: 2;
+    background-image: url(../img/story-2/witches.svg);
+    // set the horizontal size to n*100% because we have n frames
+    // background-size: 300%, 100%;
+    // background-position: left;
+    // background-repeat: no-repeat;
+    // animation-name: witches-fill;
+    // animation-duration: 1.3s;
+    // set the number of steps to n-1 because we have n frames
+    // animation-timing-function: steps(2);
+    // animation-iteration-count: infinite;
+    @include breakpoint(mobile) {
+      width: 325px;
+      height: 325px;
+      right: 0;
+    }
+    @include breakpoint(tablet) {
+      width: 450px;
+      height: 450px;
+      right: 0;
+    }
+    @include breakpoint(desktop) {
+      bottom: 0;
+      top: auto;
+    }
+  }
+  & .smoke {
+    position: absolute;
+    animation-name: clouds;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 6;
+    &-1 {
+      animation-duration: 90s;
+      width: 100%;
+      height: 150px;
+      bottom: 10%;
+      left: 0;
+      background-image: url(../img/story-2/smoke-1.png);
+    }
+    &-2 {
+      animation-duration: 70s;
+      width: 100%;
+      height: 150px;
+      top: 20%;
+      left: 0;
+      background-image: url(../img/story-2/smoke-2.png);
+    }
+  }
+}
+// story 3
+.story-3 {
+  background: #1a2023;
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  & .subTitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .orb {
+    width: 456px;
+    height: 456px;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #1a1a1a, inset 20px 0 60px #1e5e81, inset -20px 0 60px $blue, inset 20px 0 300px #1e5e81,
+      inset -20px 0 300px $blue, 0 0 50px #1a1a1a, -10px 0 60px #1e5e81, 10px 0 60px $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(mobile) {
+      width: 176px;
+      height: 176px;
+    }
+    @include breakpoint(tablet) {
+      width: 276px;
+      height: 276px;
+    }
+    // @include breakpoint(desktop){
+    //   width: 356px;
+    //   height: 356px;
+    // }
+    & img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      @include breakpoint(mobile) {
+        width: 100px;
+        height: 100px;
+      }
+      @include breakpoint(tablet) {
+        width: 150px;
+        height: 150px;
+      }
+      // @include breakpoint(desktop){
+      //   width: 200px;
+      //   height: 200px;
+      // }
+    }
+  }
+  & .hand {
+    position: absolute;
+    width: 100%;
+    height: 525px;
+    left: -40%;
+    bottom: 0;
+    background-image: url(../img/story-3/hand.png);
+    background-position: right;
+    z-index: 4;
+    mix-blend-mode: multiply;
+    @include breakpoint(mobile) {
+      height: 200px;
+    }
+    @include breakpoint(tablet) {
+      height: 250px;
+    }
+    @include breakpoint(desktop) {
+      height: 475px;
+    }
+  }
+}
+// story 4
+.story-4 {
+  background: linear-gradient(
+    180.54deg,
+    #1a1a1a -9.2%,
+    #1a2023 5.9%,
+    #1b2f3a 30.22%,
+    #1c4961 60.71%,
+    #1e6c96 95.89%,
+    #1e77a6 105.64%
+  );
+  // background: url(../img/story-4/eyes.svg) repeat center;
+  // background-position: center center;
+  // background-size: cover;
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    z-index: 5;
+    @include breakpoint(mobile) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  & .land {
+    position: absolute;
+    width: 100%;
+    height: 373px;
+    right: 0;
+    bottom: -15%;
+    background-image: url(../img/story-4/land.png);
+    z-index: 4;
+    @include breakpoint(mobile) {
+      height: 173px;
+    }
+    @include breakpoint(tablet) {
+      height: 237px;
+    }
+  }
+  & .dust-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 5%;
+    bottom: 5%;
+    background-image: url(../img/story-4/dust-left.png);
+    @include breakpoint(mobile) {
+      width: 50px;
+      height: 50px;
+    }
+    @include breakpoint(tablet) {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  & .dust-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/story-4/dust-right.png);
+    @include breakpoint(mobile) {
+      width: 50px;
+      height: 50px;
+    }
+    @include breakpoint(tablet) {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  & .home {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 25%;
+    bottom: 20%;
+    background-image: url(../img/story-4/home.png);
+    z-index: 2;
+    @include breakpoint(mobile) {
+      height: 60px;
+      width: 100px;
+    }
+    @include breakpoint(tablet) {
+      width: 150px;
+      height: 90px;
+    }
+  }
+  & .board {
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    left: 15%;
+    bottom: 15%;
+    background-image: url(../img/story-4/board.png);
+    @include breakpoint(mobile) {
+      width: 75px;
+      height: 35px;
+    }
+    @include breakpoint(tablet) {
+      width: 110px;
+      height: 50px;
+    }
+  }
+  & .boom-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 15%;
+    top: -10%;
+    background-image: url(../img/story-4/boom.png);
+    z-index: 3;
+  }
+  & .boom-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: url(../img/story-4/boom-8-opacity.png);
+    mix-blend-mode: overlay;
+    z-index: 2;
+  }
+  & .boom-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -15%;
+    top: -10%;
+    background-image: url(../img/story-4/boom-70-opacity.png);
+    z-index: 1;
+  }
+  & .eyes {
+    width: 516.5px;
+    height: 348.8px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-image: url(../img/story-4/eyes.svg);
+    @include breakpoint(mobile) {
+      width: 200px;
+      height: 100px;
+    }
+    @include breakpoint(tablet) {
+      width: 300px;
+      height: 150px;
+    }
+  }
+}
+// story 5
+.story-5 {
+  background: linear-gradient(90deg, #1c3949 45.59%, rgba(28, 57, 73, 1) 94.86%);
+  & .subTitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+    max-width: 420px;
+    margin-bottom: 0;
+    @include breakpoint(mobile) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 60px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+  }
+  & .content {
+    padding: 0 18px 64px;
+    z-index: 3;
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    transform: translate(-50%, -50%);
+    @include breakpoint(mobile) {
+      padding: 0 12px;
+      max-width: 300px;
+      top: 75%;
+      left: 23%;
+    }
+    @include breakpoint(tablet) {
+      padding: 0 18px;
+      max-width: 300px;
+      top: 75%;
+      left: 23%;
+    }
+    @include breakpoint(desktop) {
+      padding: 12px 18px;
+      max-width: 500px;
+      top: 75%;
+      left: 25%;
+    }
+  }
+}
+// story 6
+.story-6 {
+  background-color: #0d619e;
+  .fp-tableCell {
+    vertical-align: bottom;
+  }
+  & .subTitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    @include breakpoint(desktop) {
+    }
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 72px;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include breakpoint(desktop) {
+      font-size: 48px;
+      line-height: 54px;
+    }
+  }
+  & .content {
+    padding: 0 18px 64px;
+    z-index: 3;
+    @include breakpoint(mobile) {
+      padding: 0 18px 32px;
+    }
+    @include breakpoint(tablet) {
+      padding: 0 12px 32px;
+    }
+  }
+  & .stick {
+    position: absolute;
+    bottom: -15%;
+    right: -15.5%;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/story-6/stick.png);
+    z-index: 2;
+    @include breakpoint(desktop) {
+      right: -22.5%;
+    }
+  }
+  & .bling {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/story-6/gloww.svg);
+    background-size: cover;
+  }
+  & .bling-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/story-6/gloww-2.svg);
+    background-size: cover;
+  }
+  & .bling-3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/story-6/gloww-3.svg);
+    background-size: cover;
+  }
+  .bg-ripple-animation {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    & .top-right-ripples {
+      width: 36rem;
+      height: 36rem;
+      position: absolute;
+      top: -6%;
+      left: 35%;
+      @include breakpoint(tablet) {
+        width: 18rem;
+        height: 18rem;
+        top: -4%;
+        left: 39%;
+      }
+      @include breakpoint(desktop) {
+        display: none;
+      }
+      & .ripples {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: 0;
+          transform: scale(1);
+          animation-name: k1;
+          animation-duration: 3s;
+          animation-delay: 0s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          background: radial-gradient(
+            ellipse at center,
+            rgba($yellow, 0) 0%,
+            rgba($yellow, 0.5) 40%,
+            rgba($yellow, 0.3) 100%
+          );
+          border: 0.5px solid rgba(255, 255, 255, 0.4);
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: 0;
+          animation-name: k1;
+          animation-duration: 6s;
+          animation-delay: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          background: radial-gradient(
+            ellipse at center,
+            rgba($yellow, 0) 0%,
+            rgba($yellow, 0.5) 40%,
+            rgba($yellow, 0.3) 100%
+          );
+          border: 0.5px solid rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}
+@keyframes k1 {
+  0% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+    opacity: 0;
+  }
+  33% {
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+// story 7
+.story-7 {
+  background-color: #0d619e;
+  background-image: url(../img/story-7/glow.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  @include breakpoint(mobile) {
+    // .swiper-container {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+    .container {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  @include breakpoint(tablet) {
+    .container {
+      max-width: 736px;
+      padding: 0;
+    }
+  }
+  @include breakpoint(tablet) {
+    .container {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .swiper-slide {
+    opacity: 0 !important;
+    &-active {
+      opacity: 1 !important;
+    }
+  }
+  .icon-img {
+    width: 334px;
+    height: 334px;
+    border-radius: 99999px;
+    background: rgba($color: #fff4d2, $alpha: 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-8%);
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(mobile) {
+      width: 150px;
+      height: 150px;
+      transform: translateX(0);
+    }
+    @include breakpoint(tablet) {
+      width: 200px;
+      height: 200px;
+      transform: translateX(15px);
+      background-color: transparent;
+    }
+    @include breakpoint(desktop) {
+      margin: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      // top: 0;
+      // left: 0;
+      // width: 652.3px;
+      // height: 652.3px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(1);
+      animation-name: k1;
+      animation-duration: 6s;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($yellow, 0) 0%,
+        rgba($yellow, 0.8) 40%,
+        rgba($yellow, 0.5) 100%
+      );
+      border: 0.5px solid rgba($yellow, 0.4);
+      z-index: -1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      // top: 0;
+      // left: 0;
+      // width: 652.3px;
+      // height: 652.3px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0;
+      animation-name: k1;
+      animation-duration: 6s;
+      animation-delay: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($yellow, 0) 0%,
+        rgba($yellow, 0.5) 40%,
+        rgba($yellow, 0.3) 100%
+      );
+      border: 0.5px solid rgba($yellow, 0.4);
+      z-index: -1;
+    }
+    & img {
+      width: 261px;
+      height: 261px;
+      @include breakpoint(mobile) {
+        width: 100px;
+        height: 100px;
+      }
+      @include breakpoint(tablet) {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+  & .content-wrapper {
+    // max-width: 340px;
+    width: 375px;
+    height: 375px;
+    padding: 24px;
+    position: relative;
+    // background-color: #0d619e;
+    border-radius: 16px;
+    margin: 0 24px 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(mobile) {
+      width: 175px;
+      height: 175px;
+      padding: 0;
+    }
+    @include breakpoint(tablet) {
+      width: 275px;
+      height: 275px;
+    }
+    & img {
+      object-fit: contain;
+    }
+    & .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 80px;
+      & small {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 45px;
+      }
+    }
+    & .subTitle {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: justify;
+    }
+    & .txt {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+      letter-spacing: 0.365em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 0;
+      &.tech {
+        position: absolute;
+        top: 70px;
+        left: 25px;
+      }
+    }
+  }
+}
+// story-8
+.story-8 {
+  background: #0b4e7e;
+  padding: 54px 0;
+  @include breakpoint(mobile) {
+    padding: 12px 0;
+  }
+  @include breakpoint(tablet) {
+    padding: 24px 0;
+    & .container {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  & .row {
+    height: auto;
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 70px;
+    margin-top: 24px;
+    @include breakpoint(mobile) {
+      font-size: 24px;
+      line-height: 30px;
+      position: absolute;
+      top: 20%;
+      left: 15px;
+      max-width: 300px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 24px;
+      line-height: 30px;
+      position: absolute;
+      top: 20%;
+      left: 15px;
+      max-width: 300px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 54px 0 0;
+    @include breakpoint(mobile) {
+      margin: 25% 0 0;
+    }
+    @include breakpoint(tablet) {
+      margin: 20% 0 0;
+    }
+    li {
+      cursor: pointer;
+      padding: 0.6em 0.8em 0.45em 2.8em;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+      transition: all 200ms ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 8px;
+      @include breakpoint(mobile) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 0;
+      }
+      @include breakpoint(tablet) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background: linear-gradient(to right, hsla(0, 0%, 100%, 0.8), transparent);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(-380px);
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1);
+        z-index: -1;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: white;
+        position: absolute;
+        left: 17px;
+        top: 17px;
+        transition: all 200ms ease;
+        border-radius: 33% 67% 65% 35% / 46% 62% 38% 54%;
+        @include breakpoint(mobile) {
+          width: 12px;
+          height: 12px;
+        }
+        @include breakpoint(tablet) {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+  & .tada {
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    height: 750px;
+    width: 750px;
+    z-index: 2;
+    background-image: url(../img/story-8/tada.svg);
+    @include breakpoint(mobile) {
+      height: 300px;
+      width: 300px;
+    }
+    @include breakpoint(tablet) {
+      height: 450px;
+      width: 450px;
+    }
+  }
+  .bg-ripple-animation {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    & .top-right-ripples {
+      width: 36rem;
+      height: 36rem;
+      position: absolute;
+      bottom: 6%;
+      left: 5.5%;
+      @include breakpoint(tablet) {
+        width: 23rem;
+        height: 23rem;
+        left: 4.5%;
+      }
+      & .ripples {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: 0;
+          transform: scale(1);
+          animation-name: k1;
+          animation-duration: 3s;
+          animation-delay: 0s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          background: radial-gradient(
+            ellipse at center,
+            rgba($yellow, 0) 0%,
+            rgba($yellow, 0.5) 40%,
+            rgba($yellow, 0.3) 100%
+          );
+          border: 0.5px solid rgba(255, 255, 255, 0.4);
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: 0;
+          animation-name: k1;
+          animation-duration: 6s;
+          animation-delay: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          background: radial-gradient(
+            ellipse at center,
+            rgba($yellow, 0) 0%,
+            rgba($yellow, 0.5) 40%,
+            rgba($yellow, 0.3) 100%
+          );
+          border: 0.5px solid rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}
+// story 9
+.story-9 {
+  background-color: #97cef6;
+  background-image: url(../img/story-9/bg.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include breakpoint(tablet) {
+    & .container {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 35px;
+    color: #074471;
+    @include breakpoint(mobile) {
+      font-size: 22px;
+      line-height: 26px;
+      position: absolute;
+      top: 25%;
+    }
+    @include breakpoint(tablet) {
+      font-size: 28px;
+      line-height: 36px;
+      position: absolute;
+      top: 25%;
+    }
+    @include breakpoint(desktop) {
+      font-size: 42px;
+      line-height: 30px;
+    }
+    & small {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      @include breakpoint(mobile) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @include breakpoint(desktop) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+  & .content-wrapper {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: justify;
+    color: #074471;
+    max-width: 257px;
+    margin-left: auto;
+    margin-top: 24px;
+    @include breakpoint(mobile) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 50%;
+      max-width: 100%;
+    }
+    @include breakpoint(tablet) {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 35%;
+      max-width: 100%;
+    }
+    @include breakpoint(desktop) {
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 100%;
+    }
+    & p {
+      margin: 0;
+    }
+  }
+  & .boss-wrapper {
+    position: relative;
+    & .boss {
+      width: 423px;
+      height: 429px;
+      position: relative;
+      z-index: 1;
+      @include breakpoint(mobile) {
+        width: 153px;
+        height: 159px;
+      }
+      @include breakpoint(tablet) {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    & .bubble {
+      position: absolute;
+      z-index: 0;
+      right: 0%;
+      top: -20%;
+      width: auto;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.46);
+      backdrop-filter: blur(9px);
+      /* Note: backdrop-filter has minimal browser support */
+      border-radius: 43px;
+      font-family: sans-serif;
+      padding: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 20px;
+      color: #074471;
+      @include breakpoint(mobile) {
+        font-size: 14px;
+        line-height: 18px;
+        top: -15%;
+        margin: 0;
+      }
+      @include breakpoint(tablet) {
+        font-size: 16px;
+        line-height: 20px;
+        top: -10%;
+        margin: 0;
+        right: 10%;
+      }
+      @include breakpoint(desktop) {
+        top: -20%;
+      }
+      &::before,
+      &::after {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      &:before {
+        content: '';
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 24px solid rgba(255, 255, 255, 0.46);
+        border-right: 12px solid transparent;
+        border-top: 12px solid rgba(255, 255, 255, 0.46);
+        border-bottom: 20px solid transparent;
+        left: 40px;
+        bottom: -32px;
+      }
+    }
+  }
+}
+
+// story-10
+.story-10 {
+  background: #97cef6;
+  background-image: url(../img/story-10/tada.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 54px 0;
+  @include breakpoint(mobile) {
+    padding: 24px 0;
+  }
+  & .container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+  & .content-wrap {
+    max-width: 750px;
+    transform: translateX(10%);
+    &-2 {
+      transform: translateX(25%);
+    }
+    @include breakpoint(mobile) {
+      transform: translate(0%, 30%);
+      max-width: 100%;
+    }
+    @include breakpoint(tablet) {
+      transform: translateX(0);
+      max-width: 100%;
+    }
+    @include breakpoint(desktop) {
+      transform: translateX(0);
+    }
+  }
+  .swiper-slide {
+    opacity: 0 !important;
+    &-active {
+      opacity: 1 !important;
+    }
+  }
+  & .boss {
+    width: 390px;
+    height: 623px;
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    @include breakpoint(mobile) {
+      width: 150px;
+      height: 250px;
+    }
+    @include breakpoint(tablet) {
+      width: 250px;
+      height: 400px;
+    }
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+    color: #074471;
+    @include breakpoint(mobile) {
+      margin-top: 15%;
+      font-size: 18px;
+      line-height: 30px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 108px 0 0 54px;
+    @include breakpoint(mobile) {
+      margin: 24px 0;
+    }
+    @include breakpoint(tablet) {
+      margin: 54px 0;
+    }
+    @include breakpoint(desktop) {
+      margin: 72px 0 0 24px;
+    }
+    li {
+      cursor: pointer;
+      padding: 0.6em 0.8em 0.45em 2.8em;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+      transition: all 200ms ease;
+      position: relative;
+      overflow: hidden;
+      color: #074471;
+      @include breakpoint(mobile) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background: linear-gradient(to right, hsla(0, 0%, 100%, 0.8), transparent);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateX(-380px);
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1);
+        z-index: -1;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: #074471;
+        position: absolute;
+        left: 17px;
+        top: 17px;
+        transition: all 200ms ease;
+        border-radius: 33% 67% 65% 35% / 46% 62% 38% 54%;
+        @include breakpoint(mobile) {
+          width: 12px;
+          height: 12px;
+        }
+        @include breakpoint(tablet) {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+  & .text-wrap {
+    // background-color: #218cd9;
+    background-image: url(../img/story-10/bg.png);
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 12px 24px;
+    margin: 108px 0;
+    position: relative;
+    @include breakpoint(mobile) {
+      margin: 24px 0;
+    }
+    @include breakpoint(tablet) {
+      margin: 32px 0;
+    }
+    &.w-1 {
+      margin-left: 15%;
+    }
+    &.w-2 {
+      margin-left: 20%;
+      & p {
+        padding-left: 72px;
+      }
+    }
+    &.w-3 {
+      margin-left: 25%;
+      & p {
+        text-align: right;
+        padding-right: 72px;
+      }
+    }
+    & .text-shadow {
+      text-shadow: -3px -2px 0px #218cd9;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 80px;
+      color: #ffffff;
+      top: -55px;
+      left: 0;
+      position: absolute;
+      text-transform: uppercase;
+      @include breakpoint(mobile) {
+        font-size: 24px;
+        line-height: 30px;
+        top: -10px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 32px;
+        line-height: 38px;
+        top: -15px;
+      }
+    }
+    & p {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 0;
+      color: #ffffff;
+      text-align: center;
+      @include breakpoint(mobile) {
+        font-size: 12px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+// story-11
+.story-11 {
+  background-image: url(../img/story-11/tada.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #97cef7;
+  & .title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    text-align: center;
+    color: #074471;
+    @include breakpoint(mobile) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 26px;
+      line-height: 34px;
+    }
+    & strong {
+      font-size: 64px;
+      line-height: 80px;
+      font-weight: bold;
+      @include breakpoint(mobile) {
+        font-size: 32px;
+        line-height: 40px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 36px;
+        line-height: 44px;
+      }
+    }
+  }
+}
+// story-12
+.story-12 {
+  background-image: url(../img/story-12/tada.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #d2eafb;
+  padding: 54px 0;
+  @include breakpoint(mobile) {
+    padding: 6px 0;
+  }
+  @include breakpoint(tablet) {
+    padding: 12px 0;
+  }
+  @include breakpoint(mobile) {
+    & .container {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  @include breakpoint(tablet) {
+    & .container {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  & .container,
+  & .row,
+  & .container-fluid {
+    height: auto;
+  }
+  & .txt {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #2e6fab;
+    @include breakpoint(mobile) {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 0;
+    }
+    @include breakpoint(tablet) {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 0;
+    }
+  }
+  .mt-25 {
+    margin-top: 25px;
+    @include breakpoint(mobile) {
+      margin-top: 0;
+    }
+    @include breakpoint(mobile) {
+      margin-top: 12px;
+    }
+  }
+  & h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #2e6fab;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include breakpoint(mobile) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    & img {
+      width: 23px;
+      height: 23px;
+      margin: 0 8px;
+      @include breakpoint(mobile) {
+        width: 15px;
+        height: 15px;
+      }
+      @include breakpoint(tablet) {
+        width: 18px;
+        height: 19px;
+      }
+    }
+  }
+  & .box-story {
+    position: relative;
+    margin: 16px 0;
+    & img {
+      width: 125px;
+      height: 125px;
+      object-fit: contain;
+      text-align: center;
+      margin: 0 0 36px;
+      @include breakpoint(mobile) {
+        width: 50px;
+        height: 50px;
+        margin: 8px 0;
+      }
+      @include breakpoint(tablet) {
+        width: 75px;
+        height: 75px;
+        margin: 12px 0;
+      }
+    }
+    & .title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      color: #2e6fab;
+      margin-bottom: 0;
+      text-align: center;
+      @include breakpoint(mobile) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 0px;
+      }
+      @include breakpoint(tablet) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 0px;
+      }
+      & small {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+        @include breakpoint(mobile) {
+          font-size: 10px;
+          line-height: 16px;
+        }
+        @include breakpoint(tablet) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+    & ul {
+      margin-left: 22px;
+      & li {
+        list-style: disc;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        color: #2e6fab;
+        @include breakpoint(mobile) {
+          font-size: 10px;
+          line-height: 16px;
+        }
+        @include breakpoint(tablet) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+// story 13
+.story-13 {
+  // background-color: #0d1945;
+  & .spin-button {
+    background: #c1391b;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25), inset 3px 4px 4px rgba(255, 205, 130, 0.25);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #fff;
+    border-color: transparent;
+  }
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44.4711px;
+    line-height: 56px;
+    color: #fbe773;
+    @include breakpoint(mobile) {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+}
+.swal2-modal {
+  min-width: 550px;
+  @include breakpoint(mobile) {
+    width: 80%;
+    min-width: auto;
+  }
+  .mt3 {
+    margin-top: 3px;
+  }
+  .mt4 {
+    margin-top: 4px;
+  }
+  .mt-15 {
+    margin-top: 15px;
+  }
+  .swal2-actions {
+    display: none !important;
+  }
+}
